@@ -1,0 +1,41 @@
+
+
+body {
+    margin-top : 30px;
+    padding : 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap : 30px;
+
+}
+
+.DivStyle { 
+    border : 2px black solid;
+    width: 30px;
+    height: 30px;
+    opacity : 0.05;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 544px;
+    border : 2px black solid;
+
+}
+
+.hoverDiv {
+    background-color : rgb(0, 0, 0);
+    opacity: 0.8;
+
+}
+
+.adjust, .clear {
+    padding : 10px;
+    border-radius : 10px;
+    background-color: whitesmoke;
+    font-weight : bold;
+    font-size :20px;
+}

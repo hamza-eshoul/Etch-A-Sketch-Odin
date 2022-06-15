@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <h1> Etch and Sketch, Fun and more Fun </h1>
+
+    <button class="adjust"> Adjust the number of squares </button>
+    <button class="clear"> Clear The Trail </button>
+
+    <div class="container"> </div>
+
+
+
+
+
+
+
+
+    <script> 
+    
+    /* 16*16 Grid */ 
+    for (let i=1; i <=256; i++) {
+
+        const container = document.querySelector(".container");
+        const myDiv = document.createElement('div');
+        myDiv.classList.add("DivStyle");
+
+        container.appendChild(myDiv);
+
+    };
+
+  /* Trail and events */ 
+    const iDiv = document.querySelectorAll('.DivStyle');
+    iDiv.forEach(DivStyle => DivStyle.addEventListener('mouseenter', function() { 
+        this.classList.add("hoverDiv");
+    }));
+
+    iDiv.forEach(Divstyle => Divstyle.addEventListener('mouseleave', function() {
+        function myFunction() {this.classList.remove("hoverDiv")};
+    }));
+
+    /* Adjustment button */ 
+
+    function adjustSquare() {
+
+        /* prompt */
+       let numberSquares = prompt("What is the number of squares that you want on your Sketch ? \nThe limit is 40px");
+  
+
+
+       /* removing children */ 
+       function removeAllChildNodes (parent) {
+           while ( parent.firstChild ) {
+               parent.removeChild(parent.firstChild);
+           }
+       }
+       const myContainer = document.querySelector(".container");
+
+       
+       removeAllChildNodes(myContainer);
+
+
+        /* drawing new grid */ 
+
+        let myWidtHeight = (544 / numberSquares) - 4;
+
+
+        for (let i=1; i <= (numberSquares*numberSquares); i++) {
+
+            if ( isNaN(numberSquares)) {
+                console.log("Please enter a number");
+                return;
+            }
+
+            else if ( numberSquares <= 40) {
+
+        const myContainer2 = document.querySelector(".container");
+        const myDiv2 = document.createElement('div');
+        myDiv2.classList.add("DivStyle");
+        myContainer2.appendChild(myDiv2);
+
+        const divStyle = document.querySelectorAll(".DivStyle"); 
+        divStyle.forEach(divStyle => divStyle.style.width = myWidtHeight);
+        divStyle.forEach(divStyle => divStyle.style.height = myWidtHeight);
+            }
+
+            else if (numberSquares > 40) { 
+                alert(" You entered a number of squares that is superior to the limit of 40px, pick another number");
+                return;
+            }
+
+          
+       
+    }
+
+    const iDiv = document.querySelectorAll('.DivStyle');
+        iDiv.forEach(DivStyle => DivStyle.addEventListener('mouseenter', function() { 
+        this.classList.add("hoverDiv");
+    }));
+
+         iDiv.forEach(Divstyle => Divstyle.addEventListener('mouseleave', function() {
+        function myFunction() {this.classList.remove("hoverDiv")};
+    }));
+    ;
+};
+
+
+
+
+
+   /* Clear All */ 
+   
+    const myButton = document.querySelector('.adjust');
+    myButton.addEventListener('click', adjustSquare);
+
+    const myButton2 = document.querySelector('.clear');
+    myButton2.addEventListener('click', clearAll);
+
+
+    function clearAll() {
+
+        const iDiv = document.querySelectorAll('.DivStyle');
+        iDiv.forEach(Divstyle => Divstyle.classList.remove("hoverDiv"));
+    
+    };
+    
+
+
+
+  
+
+
+
+
+    </script>
+
+</body>
+</html>
+
+
